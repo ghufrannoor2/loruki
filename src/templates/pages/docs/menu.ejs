@@ -1,0 +1,21 @@
+<!-- prettier-ignore -->
+<div class="docs-menu">
+    <%- include('menu-section', { section: {
+        heading: 'Essentials',
+        links: [
+            { url: '#', name: 'Introduction', selected: true },
+            { url: '#', name: 'About Loruki' },
+            { url: '#', name: 'Installation' }
+        ]
+    } }) %>
+
+    <%- include('menu-section', { section: {
+        heading: 'Deployment',
+        links: [
+            { url: '#', name: 'Setting up a container' },
+            { url: '#', name: 'Using the CLI' },
+            { url: '#', name: 'Managing resources' },
+            { url: '#', name: 'Upgrade and downgrade' }
+        ]
+    } }) %>
+</div>

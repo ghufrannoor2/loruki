@@ -1,0 +1,16 @@
+.footer {
+    @extend .bg--dark;
+    @extend .py--5;
+
+    &__container {
+        @extend .container;
+        @extend .grid;
+        @extend .grid--3-cols;
+    }
+
+    &__link,
+    &__social-link {
+        color: $color-white;
+        margin: 0 1rem;
+    }
+}

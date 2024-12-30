@@ -1,0 +1,98 @@
+// HERO
+.docs-hero {
+    @extend .bg--primary;
+    @extend .py--3;
+
+    &__container {
+        @extend .container;
+        @extend .grid;
+
+        @extend .grid--responsive-1-col;
+    }
+
+    &__heading {
+        @extend .xl;
+        @include respond(tablet) {
+            text-align: center;
+        }
+    }
+
+    &__description {
+        @extend .lead;
+        @include respond(tablet) {
+            text-align: center;
+        }
+    }
+
+    &__img {
+        width: 20rem;
+        justify-self: end;
+
+        @include respond(tablet) {
+            justify-self: center;
+        }
+    }
+}
+
+// Content
+.docs-content {
+    @extend .my--4;
+
+    &__container {
+        @extend .container;
+        @extend .grid;
+
+        grid-template-columns: 1fr 2fr;
+        align-items: start;
+
+        @include respond(tablet) {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+        }
+    }
+}
+
+.docs-menu {
+    @extend .card;
+    @extend .bg--light;
+    @extend .p--3;
+
+    &__heading {
+        @extend .my--2;
+    }
+
+    &__item {
+        font-size: 1.7rem;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+        border-bottom: 1px $color-border solid;
+        transition: all 0.2s;
+
+        &:has(.docs-menu__link.text--primary) {
+            border-bottom-color: $color-primary;
+        }
+    }
+
+    &__link {
+        &:link {
+            transition: all 0.1s;
+        }
+
+        &.text--primary {
+            font-weight: $font-weight-bold;
+        }
+
+        &.text--primary,
+        &:hover {
+            color: $color-primary;
+        }
+    }
+}
+
+.doc-page {
+    @extend .card;
+
+    &__heading {
+        margin: 2rem 0;
+    }
+}

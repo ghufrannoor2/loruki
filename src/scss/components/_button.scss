@@ -1,0 +1,35 @@
+.btn {
+    background: $color-primary;
+    border-radius: 5px;
+    border: none;
+    color: $color-white;
+    cursor: pointer;
+    display: inline-block;
+    padding: 1rem 3rem;
+
+    &--outline {
+        background-color: transparent;
+        border: 1px $color-white solid;
+    }
+
+    &--primary {
+        background-color: $color-primary;
+        color: $color-white;
+    }
+    &--secondary {
+        background-color: $color-secondary;
+        color: $color-white;
+    }
+    &--dark {
+        background-color: $color-dark;
+        color: $color-white;
+    }
+    &--light {
+        background-color: $color-light;
+        color: $color-grey-dark;
+    }
+
+    &:hover {
+        transform: scale(0.98);
+    }
+}

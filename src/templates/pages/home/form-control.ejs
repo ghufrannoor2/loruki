@@ -1,0 +1,13 @@
+<!-- prettier-ignore -->
+<div class="<% if (input.parent) { %><%= input.parent %>__<% } %>control">
+    <input
+        <% if (input.parent) { %>
+            class="<%= input.parent %>__input"
+        <% } %>
+        type="<%= input.type %>"
+        name="<%= input.name %>"
+        placeholder="<%= input.placeholder %>"
+        <% if (input.required) { %>
+        required <% } %>
+    />
+</div>

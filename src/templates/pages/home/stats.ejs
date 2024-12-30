@@ -1,0 +1,27 @@
+<section class="stats">
+    <div class="stats__container">
+        <h2 class="stats__heading">
+            Welcome to the best platform for building applications of all types
+            with modern architecture and scaling
+        </h2>
+
+        <!-- prettier-ignore -->
+        <div class="stats__grid">
+            <%- include('stat', { stat: {
+                icon: 'fa-server',
+                number: '10,349,405',
+                name: 'Deployments',
+            } }) %>
+            <%- include('stat', { stat: {
+                icon: 'fa-upload',
+                number: '987 TB',
+                name: 'Published',
+            } }) %>
+            <%- include('stat', { stat: {
+                icon: 'fa-project-diagram',
+                number: '2,345,265',
+                name: 'Projects',
+            } }) %>
+        </div>
+    </div>
+</section>

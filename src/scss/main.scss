@@ -1,0 +1,34 @@
+// External stuff
+@import "vendor/fonts";
+
+// Most utils
+@import "utils/variables";
+@import "utils/functions";
+@import "utils/mixins";
+
+// Base
+@import "base/animations";
+@import "base/base";
+@import "base/reset";
+@import "base/typography";
+
+// Reusable Components and Layouts that are meant to be overridden
+@import "components/alert";
+@import "components/button";
+@import "components/card";
+@import "components/nav";
+
+@import "layout/containers";
+
+// As long as components/layouts are not using any of the helper styles, we can have the helper styles later so that they will override default component styles in case anything wants to override them
+// Helpers that will override defaults styles from components and layouts
+@import "utils/helpers";
+
+// Layouts that are not meant to be overridden
+@import "layout/footer";
+@import "layout/header";
+
+// Pages
+@import "pages/docs";
+@import "pages/features";
+@import "pages/home";

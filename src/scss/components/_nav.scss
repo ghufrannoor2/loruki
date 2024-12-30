@@ -1,0 +1,25 @@
+.nav {
+    &__links {
+        display: flex;
+        gap: 0.5rem;
+
+        @include respond(phone) {
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    &__link {
+        padding: 1rem;
+        border-bottom: 2px transparent solid;
+        transition: border-bottom 0.3s;
+
+        &:any-link {
+            color: $color-white;
+        }
+
+        &:hover {
+            border-bottom-color: $color-white;
+        }
+    }
+}

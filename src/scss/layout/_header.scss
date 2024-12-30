@@ -1,0 +1,17 @@
+.header {
+    background-color: $color-primary;
+    color: $color-white;
+    height: 7rem;
+
+    @include respond(phone) {
+        height: 11rem;
+    }
+
+    & .flex {
+        justify-content: space-between;
+
+        @include respond(phone) {
+            flex-direction: column;
+        }
+    }
+}

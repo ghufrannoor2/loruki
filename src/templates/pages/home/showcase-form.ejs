@@ -1,0 +1,23 @@
+<article class="showcase-form card">
+    <h2>Request a Demo</h2>
+
+    <!-- prettier-ignore -->
+    <form>
+        <%- include('form-control', {input: {
+            parent: 'showcase-form',
+            type: 'text', name: 'name', placeholder: 'Name', required: true 
+        }}) %>
+
+        <%- include('form-control', {input: {
+            parent: 'showcase-form',
+            type:'text', name: 'company', placeholder: 'Company Name', required: true
+        }}) %>
+
+        <%- include('form-control', {input: {
+            parent: 'showcase-form',
+            type: 'email', name: 'email', placeholder: 'Email', required: true
+        }}) %>
+
+        <button class="btn btn--primary" type="submit">Send</button>
+    </form>
+</article>

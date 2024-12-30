@@ -1,0 +1,7 @@
+{
+    "execMap": {
+        "ejs": "npm run compile:html"
+    },
+    "ext": "ejs",
+    "watch": ["src/templates/**"]
+}

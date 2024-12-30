@@ -1,0 +1,231 @@
+// SHOWCASE
+
+.showcase {
+    background-color: $color-primary;
+    height: 40rem;
+    color: $color-white;
+    position: relative;
+
+    @include respond(tablet) {
+        height: auto;
+    }
+
+    &__container {
+        @extend .container;
+        @extend .grid;
+
+        gap: 3rem;
+        grid-template-columns: 55% 45%;
+        overflow: visible;
+
+        // Here we cannot use the utility class for the one column grid as this class overrode the styles for grid-template-columns, so those will always take precedence due to the order of the files, so we must override the settings manually
+        @include respond(tablet) {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+        }
+    }
+
+    &__text {
+        animation: slideInFromLeft 1s ease-in;
+        margin-top: 4rem;
+
+        @include respond(tablet) {
+            animation: slideInFromTop 1s ease-in;
+            text-align: center;
+        }
+    }
+
+    &__heading {
+        font-size: 4rem;
+    }
+
+    &__description {
+        margin: 2rem 0;
+    }
+
+    &::before,
+    &::after {
+        position: absolute;
+        content: "";
+        height: 10rem;
+        bottom: -7rem;
+        right: 0;
+        left: 0;
+        background-color: $color-white;
+        transform: skewY(-3deg);
+    }
+}
+
+.showcase-form {
+    animation: slideInFromRight 1s ease-in;
+    height: 40rem;
+    justify-self: end;
+    padding: 4rem;
+    position: relative;
+    top: 6rem;
+    width: 40rem;
+    z-index: 1;
+
+    @include respond(tablet) {
+        animation: slideInFromBottom 1s ease-in;
+        justify-self: center;
+        margin: auto;
+    }
+
+    &__control {
+        margin: 3rem 0;
+    }
+
+    &__input {
+        border: none;
+        border-bottom: 2px solid $color-border;
+        padding: 0.8rem;
+        font-size: 1.6rem;
+        width: 100%;
+
+        transition: border-bottom 0.3s;
+
+        &::placeholder {
+            letter-spacing: 0.5px;
+        }
+
+        &:focus {
+            outline: none;
+            border-bottom-color: $color-primary;
+        }
+    }
+}
+
+// STATS
+
+.stats {
+    animation: slideInFromBottom 1s ease-in;
+    padding-top: 12rem;
+
+    &__container {
+        @extend .container;
+    }
+
+    &__heading {
+        max-width: 60rem;
+        margin: auto;
+
+        @extend .text-center;
+        @extend .my--1;
+    }
+
+    &__grid {
+        @extend .grid;
+        @extend .grid--3-cols;
+        @extend .text-center;
+        @extend .my--4;
+        margin-top: 8rem;
+
+        // Because we did not override grid settings here, we can use the utility class
+        @extend .grid--responsive-1-col;
+    }
+}
+
+.stat {
+    &__number {
+        font-size: 3.5rem;
+    }
+
+    &__name {
+        font-size: 2rem;
+        font-weight: $font-weight-bold;
+        @extend .text--secondary;
+    }
+}
+
+// CLI
+
+.cli {
+    &__container {
+        @extend .container;
+        @extend .grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+        // Here since we overrode the grid settings, we cannot use the utility class
+        @include respond(tablet) {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+        }
+    }
+
+    &__img {
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 2;
+
+        @include respond(tablet) {
+            grid-column: 1;
+            grid-row: 1;
+        }
+    }
+}
+
+// CLOUD
+
+.cloud {
+    @extend .bg--primary;
+    @extend .my--2;
+    @extend .p--2;
+
+    &__container {
+        @extend .container;
+        @extend .grid;
+        grid-template-columns: 4fr 3fr;
+
+        // Here we cannot use the utility class either
+        @include respond(tablet) {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+        }
+    }
+
+    &__text {
+        @extend .text-center;
+    }
+
+    &__heading {
+        @extend .lg;
+    }
+
+    &__description {
+        @extend .lead;
+        @extend .my--1;
+    }
+}
+
+// LANGUAGES
+
+.languages {
+    &__heading {
+        @extend .md;
+        @extend .text-center;
+        @extend .my--2;
+    }
+    &__container {
+        @extend .container;
+        @extend .flex;
+
+        flex-wrap: wrap;
+    }
+}
+
+.language {
+    @extend .card;
+    @extend .text-center;
+    margin: 1.8rem 1rem 4rem;
+    transition: transform 0.2s ease-in;
+
+    &:hover {
+        transform: translateY(-1.5rem);
+    }
+
+    &__name {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+}

@@ -1,0 +1,15 @@
+<h3 class="docs-menu__heading"><%= section.heading %></h3>
+<nav class="docs-menu__nav">
+    <ul>
+        <% section.links.forEach(link => { %>
+        <li class="docs-menu__item">
+            <a
+                class="docs-menu__link <% if (link.selected) { %> text--primary <% } %>"
+                href="<%= link.url %>"
+            >
+                <%= link.name %>
+            </a>
+        </li>
+        <% }) %>
+    </ul>
+</nav>

@@ -1,0 +1,35 @@
+// CONTAINER
+.container {
+    margin: 0 auto;
+    max-width: 110rem;
+    padding: 0 4rem;
+}
+
+// FLEX
+.flex {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+}
+
+// GRID
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    &--3-cols {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    &--responsive-1-col {
+        @include respond(tablet) {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+        }
+    }
+}

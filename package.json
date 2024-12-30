@@ -1,0 +1,36 @@
+{
+    "name": "loruki",
+    "version": "1.0.0",
+    "description": "Loruki project copied from Traversy media",
+    "scripts": {
+        "clean": "rm -rf dist",
+        "watch:scss": "sass --no-source-map src/scss/main.scss dist/css/style.css -w",
+        "compile:scss": "sass --no-source-map src/scss/main.scss dist/css/intermediate/style.comp.css",
+        "concat:css": "concat -o dist/css/intermediate/style.concat.css dist/css/intermediate/style.comp.css",
+        "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' dist/css/intermediate/style.concat.css -o dist/css/intermediate/style.prefix.css",
+        "compress:css": "sass --no-source-map dist/css/intermediate/style.prefix.css dist/css/style.css --style compressed",
+        "clean:css": "rm -rf dist/css/intermediate",
+        "build:css": "npm-run-all compile:scss concat:css prefix:css compress:css clean:css",
+        "compile:html": "ejs src/templates/pages/home/_root.ejs -o dist/index.html && ejs src/templates/pages/features/_root.ejs -o dist/features.html && ejs src/templates/pages/docs/_root.ejs -o dist/docs.html",
+        "minify:html": "html-minifier --collapse-whitespace --remove-comments --input-dir dist --output-dir dist --file-ext html",
+        "build:html": "npm-run-all compile:html minify:html",
+        "watch:ejs": "nodemon --exec \"npm run compile:html\"",
+        "copy:img": "mkdir -p dist/img && cp -r src/img dist",
+        "copy:img:windows": "mkdir dist && cp -r src\\img dist",
+        "build": "npm-run-all clean copy:img build:css build:html",
+        "build:windows": "npm-run-all clean copy:img:windows build:css build:html",
+        "dev": "npm run clean && npm run copy:img && npm-run-all --parallel watch:scss watch:ejs",
+        "dev:windows": "npm run clean && npm run copy:img:windows && npm-run-all --parallel watch:scss watch:ejs"
+    },
+    "author": "Ghufran Noor",
+    "devDependencies": {
+        "autoprefixer": "10.4.20",
+        "concat": "1.0.3",
+        "ejs": "3.1.10",
+        "html-minifier": "4.0.0",
+        "nodemon": "3.1.9",
+        "npm-run-all": "4.1.5",
+        "postcss-cli": "11.0.0",
+        "sass": "1.83.0"
+    }
+}

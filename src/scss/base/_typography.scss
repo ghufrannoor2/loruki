@@ -1,0 +1,47 @@
+h1,
+h2 {
+    font-weight: $font-weight-normal;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+p {
+    margin: 10px 0;
+}
+
+// Utils
+.text-center {
+    text-align: center;
+}
+
+// Text sizes
+.lead {
+    font-size: 2rem;
+}
+.sm {
+    font-size: 1.6rem;
+}
+.md {
+    font-size: 3.2rem;
+}
+.lg {
+    font-size: 4.8rem;
+}
+.xl {
+    font-size: 6.4rem;
+}
+
+.text {
+    &--primary {
+        color: $color-primary;
+    }
+    &--secondary {
+        color: $color-secondary;
+    }
+    &--dark {
+        color: $color-dark;
+    }
+    &--light {
+        color: $color-light;
+    }
+}
